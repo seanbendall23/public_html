@@ -26,6 +26,11 @@ if ($conn->connect_error)
 }
 
 $query = "INSERT INTO Movie (mvGenre, mvPrice, mvName, actID) VALUES ($movieGenre, moviePrice, movieName, 1)";
-$result = $conn->query($query);
+if ($conn->query($sql) === TRUE) {
+  echo "New record created successfully";
+} else {
+  echo "Error: " . $sql . "<br>" . $conn->error;
+}
 
+$conn->close();
 ?>
