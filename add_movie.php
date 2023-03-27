@@ -16,9 +16,13 @@ if (isset($_POST['ActorName']))
 	$actorName = $_POST['ActorName'];
 }
 
-echo $actorName;
-
 require_once 'login.php';
+echo "Variables are:"
+echo $db_host
+echo $db_user
+echo $db_pass
+echo $db_name
+
 $conn = new mysqli($db_host, $db_user, $db_pass, $db_name);
 if ($conn->connect_error)
 {
