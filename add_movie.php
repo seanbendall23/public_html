@@ -22,14 +22,15 @@ require_once 'login.php';
 $conn = new mysqli($db_host, $db_user, $db_pass, $db_name);
 if ($conn->connect_error)
 {
-	die($conn->connect_error);
+	die("Connection failed: " . $conn->connect_error);
 }
+echo "Connection made successfully";
 
 $query = "INSERT INTO Movie (mvGenre, mvPrice, mvName, actID) VALUES ($movieGenre, moviePrice, movieName, 1)";
-if ($conn->query($sql) === TRUE) {
+if ($conn->query($query) === TRUE) {
   echo "New record created successfully";
 } else {
-  echo "Error: " . $sql . "<br>" . $conn->error;
+  echo "Error: " . $query . "<br>" . $conn->error;
 }
 
 $conn->close();
