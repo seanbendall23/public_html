@@ -46,13 +46,13 @@
 
 			function validateString(str)
 			{
-				return (str == "") ? "No string was entered.\n" : "";
+				return (str == "") ? "Fields are missing on form.\n" : "";
 			}
 
 			function validatePrice(price)
 			{
-				if (price == "") { return "no price was entered";}
-				if (isNaN(price)) { return "is not a number";}
+				if (price == "") { return "You have not entered a price.";}
+				if (isNaN(price)) { return "You have entered an invalid number into price.";}
 				else { return "";}
 			}
 
