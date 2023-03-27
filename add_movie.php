@@ -16,7 +16,12 @@ if (isset($_POST['ActorName']))
 	$actorName = $_POST['ActorName'];
 }
 
-require_once 'login.php';
+//require_once 'login.php';
+$db_host = 'mysql.cs.nott.ac.uk';
+$db_user = 'psysb16_COMP1004';
+$db_pass = '1234567';
+$db_name = 'psysb16_COMP1004';
+
 echo "Variables are:";
 echo $db_host;
 echo $db_user;
