@@ -35,7 +35,7 @@ if ($conn->connect_error)
 }
 echo "Connection made successfully";
 
-$query = "INSERT INTO Movie (mvGenre, mvPrice, mvName, actID) VALUES ($movieGenre, moviePrice, movieName, 10)";
+$query = "INSERT INTO Movie (mvGenre, mvPrice, mvName, actID) VALUES ('$movieGenre', '$moviePrice', '$movieName', 10)";
 if ($conn->query($query) === TRUE) {
   echo "New record created successfully";
 } else {
