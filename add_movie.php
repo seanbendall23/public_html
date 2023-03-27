@@ -17,6 +17,8 @@ if (isset($_POST['ActorName']))
 }
 $pass_file = file('/PASSWORD.txt');
 echo $pass_file;
+echo "Hello World";
+
 
 /*
 $db_host = 'mysql.cs.nott.ac.uk';
