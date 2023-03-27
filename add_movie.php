@@ -15,8 +15,9 @@ if (isset($_POST['ActorName']))
 {
 	$actorName = $_POST['ActorName'];
 }
-$pass_file = file('/PASSWORD.txt');
-echo $pass_file;
+$pass_file = fopen('/PASSWORD.txt', "r") or die("Unable to open file!");
+echo fread($pass_file, filesize("/PASSWORD.txt"));
+fclose($pass_file);
 echo "Hello World";
 
 
