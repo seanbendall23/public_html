@@ -15,11 +15,13 @@ if (isset($_POST['ActorName']))
 {
 	$actorName = $_POST['ActorName'];
 }
+$pass_file = file('PASSWORD.txt');
+echo $pass_file;
+/*
 
 $db_host = 'mysql.cs.nott.ac.uk';
 $db_user = 'psysb16-COMP1004';
-$pass_file = file('PASSWORD.txt');
-echo $pass_file;
+
 $db_pass = '';
 $db_name = 'psysb16-COMP1004';
 $conn = new mysqli($db_host, $db_user, $db_pass, $db_name);
@@ -30,5 +32,5 @@ if ($conn->connect_error)
 
 $query = "INSERT INTO Movie (mvGenre, mvPrice, mvName, actID) VALUES ($movieGenre, moviePrice, movieName, 1)"
 $result = $conn->query($query)
-
+*/
 ?>
