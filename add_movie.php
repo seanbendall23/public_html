@@ -17,8 +17,10 @@ if (isset($_POST['ActorName']))
 }
 
 $db_host = 'mysql.cs.nott.ac.uk';
-$db_user = 'psysb16';
-$db_pass = 'Password';
+$db_user = 'psysb16-COMP1004';
+$pass_file = file('PASSWORD.txt');
+echo $pass_file;
+$db_pass = '';
 $db_name = 'psysb16-COMP1004';
 $conn = new mysqli($db_host, $db_user, $db_pass, $db_name);
 if ($conn->connect_error)
