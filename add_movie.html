@@ -11,22 +11,53 @@
 			Adding movie
 		</p>
 
-		<form method="post" action="add_movie.php">
+		<form method="post" action="add_movie.php" onsubmit="return validateSubmission(this)">
 
 			<label for="MovieName"> Movie Name: </label><br>
-			<input type="text" id="MovieName" name="MovieName"><br>
+			<input type="text" id="MovieName" name="MovieName" maxlength="255"><br>
 
 			<label for="MovieGenre"> Movie Genre: </label><br>
-			<input type="text" id="MovieGenre" name="MovieGenre"><br>
+			<input type="text" id="MovieGenre" name="MovieGenre" maxlength="255"><br>
 
 			<label for="MoviePrice"> Movie Price: </label><br>
-			<input type="text" id="MoviePrice" name="MoviePrice"><br><br>
+			<input type="text" id="MoviePrice" name="MoviePrice"><br>
+
+			<label for="ActorName"> Main Actor Name: </label><br>
+			<input type="text" id="ActorName" name="ActorName" maxlength="255"><br><br>
 
 			<input type="submit" value="Add Movie">
 		</form>
 
 		<button class="button button2" type="button" onclick="window.location.href='http://avon.cs.nott.ac.uk/~psysb16/application.html';">Back to main menu.</button>
 		
+		<script>
+			
+			function validateSubmission(form)
+			{
+				var checkValue = "";
+				checkValue += validateString(form.MovieName.value);
+				checkValue += validateString(form.MovieGenre.value);
+				checkValue += validateString(form.ActorName.value);
+				checkValue += validatePrice(form.MoviePrice.value);
+
+				if (checkValue == "") return true;
+				else {alert(checkValue); return false;}
+			}
+
+			function validateString(str)
+			{
+				return (str == "") ? "No string was entered.\n" : "";
+			}
+
+			function validatePrice(price)
+			{
+				if (price == "") { return "no price was entered";}
+				if (isNaN(price)) { return "is not a number";}
+				else { return "";}
+			}
+
+
+		</script>
 
 	</body>
 </html>
