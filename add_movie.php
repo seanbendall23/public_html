@@ -16,6 +16,8 @@ if (isset($_POST['ActorName']))
 	$actorName = $_POST['ActorName'];
 }
 
+echo $actorName;
+
 require_once 'login.php';
 $conn = new mysqli($db_host, $db_user, $db_pass, $db_name);
 if ($conn->connect_error)
@@ -23,7 +25,7 @@ if ($conn->connect_error)
 	die($conn->connect_error);
 }
 
-$query = "INSERT INTO Movie (mvGenre, mvPrice, mvName, actID) VALUES ($movieGenre, moviePrice, movieName, 1)"
-$result = $conn->query($query)
+$query = "INSERT INTO Movie (mvGenre, mvPrice, mvName, actID) VALUES ($movieGenre, moviePrice, movieName, 1)";
+$result = $conn->query($query);
 
 ?>
