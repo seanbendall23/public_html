@@ -22,12 +22,6 @@ $db_user = 'psysb16_COMP1004';
 $db_pass = '1234567';
 $db_name = 'psysb16_COMP1004';
 
-echo "Variables are:";
-echo $db_host;
-echo $db_user;
-echo $db_pass;
-echo $db_name;
-
 $conn = new mysqli($db_host, $db_user, $db_pass, $db_name);
 if ($conn->connect_error)
 {
@@ -42,17 +36,18 @@ function getActorID($actName)
 	$result = $conn->query($actIDQuery);
 	if (empty($result)) 
 	{
-		echo "Actor does not exist in database, adding them now.";
+		return "Actor does not exist in database, adding them now.";
 
 	}
 	else 
 	{
-		echo $result;
+		return $result;
 	}
 }
 
 //then, once you have the actors ID, you can add to the database.
 $actID = getActorID($actName);
+echo $actID;
 /*
 $query = "INSERT INTO Movie (mvGenre, mvPrice, mvName, actID) VALUES ('$movieGenre', '$moviePrice', '$movieName', 1)";
 if ($conn->query($query) === TRUE) 
