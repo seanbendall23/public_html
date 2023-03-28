@@ -36,13 +36,12 @@ $actIDQuery = "SELECT actID FROM Actor WHERE actName = '$actorName'";
 $stmt = $conn->prepare($actIDQuery);
 $stmt->execute();
 $stmt->bind_result($actorID);
-
-
+$actorID = 0;
 while ($stmt->fetch())
 {
-	echo htmlentities($actorID);
+	$actorID =  htmlentities($actorID);
 }
-
+echo "$actorID";
 /*
 $query = "INSERT INTO Movie (mvGenre, mvPrice, mvName, actID) VALUES ('$movieGenre', '$moviePrice', '$movieName', $actorID)";
 if ($conn->query($query) === TRUE) 
