@@ -35,12 +35,34 @@ if ($conn->connect_error)
 }
 echo "Connection made successfully";
 
-$query = "INSERT INTO Movie (mvGenre, mvPrice, mvName, actID) VALUES ('$movieGenre', '$moviePrice', '$movieName', 1)";
-if ($conn->query($query) === TRUE) {
-  echo "New record created successfully";
-} else {
-  echo "Error: " . $query . "<br>" . $conn->error;
+//start by trying to retrieve the actor ID from the database.
+function getActorID($actName)
+{
+	$actIDQuery = "SELECT actID FROM Actor WHERE actName = '$actName'";
+	$result = $conn->query($actIDQuery);
+	if (empty($result)) 
+	{
+		echo "Actor does not exist in database, adding them now.";
+
+	}
+	else 
+	{
+		echo $result;
+	}
 }
 
+//then, once you have the actors ID, you can add to the database.
+$actID = getActorID($actName);
+/*
+$query = "INSERT INTO Movie (mvGenre, mvPrice, mvName, actID) VALUES ('$movieGenre', '$moviePrice', '$movieName', 1)";
+if ($conn->query($query) === TRUE) 
+{
+  echo "Success - new actor added.";
+} 
+else 
+{
+  echo "Error: ". $conn->error;
+}
+*/
 $conn->close();
 ?>
