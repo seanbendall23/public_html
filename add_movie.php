@@ -38,6 +38,10 @@ if ($result = $conn->query($actIDQuery))
 	{
 		echo "Empty result found";
 	}
+	while ($row = mysqli_fetch_array($result))
+	{
+		echo $row['actID'];
+	}
 }
 else 
 {
