@@ -32,8 +32,17 @@ echo "Connection made successfully";
 //start by trying to retrieve the actor ID from the database.
 function getActorID($actName)
 {
+	echo $actName;
 	$actIDQuery = "SELECT actID FROM Actor WHERE actName = '$actName'";
 	$result = $conn->query($actIDQuery);
+
+	/*
+	while ($row = $result->fetch_array(MYSQLI_ASSOC))
+	{
+		echo ${row['actID']};
+	}
+	*/
+	
 	if ($result === TRUE)
 	{
 		if (empty($result)) 
@@ -43,6 +52,7 @@ function getActorID($actName)
 			
 		else 
 		{
+
 			return $result;	
 		}
 	}
@@ -51,10 +61,11 @@ function getActorID($actName)
 		echo "Error: " . $conn->error;
 	}
 	
+	
 }
 
 //then, once you have the actors ID, you can add to the database.
-echo getActorID($actName);
+echo "getActorID($actName)";
 /*
 $query = "INSERT INTO Movie (mvGenre, mvPrice, mvName, actID) VALUES ('$movieGenre', '$moviePrice', '$movieName', 1)";
 if ($conn->query($query) === TRUE) 
