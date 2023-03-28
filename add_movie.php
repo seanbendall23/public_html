@@ -30,7 +30,7 @@ if ($conn->connect_error)
 echo "Connection made successfully <br>";
 
 
-//echo $actName;
+echo $actName;
 $actIDQuery = "SELECT actID FROM Actor WHERE actName = '$actName'";
 if ($result = $conn->query($actIDQuery))
 {
