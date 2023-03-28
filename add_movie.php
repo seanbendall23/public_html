@@ -32,7 +32,17 @@ echo "Connection made successfully <br>";
 
 //echo $actName;
 $actIDQuery = "SELECT actID FROM Actor WHERE actName = '$actName'";
-$result = $conn->query($actIDQuery);
+if ($result = $conn->query($actIDQuery))
+{
+	if (empty($result))
+	{
+		echo "Empty result found";
+	}
+}
+else 
+{
+	echo "Error cannot execute $actIDQuery" . mysqli_error($conn);
+}
 
 /*
 while ($row = $result->fetch_array(MYSQLI_ASSOC))
@@ -40,7 +50,6 @@ while ($row = $result->fetch_array(MYSQLI_ASSOC))
 	echo ${row['actID']};
 }
 */
-echo $result;
 /*
 if ($result === TRUE)
 {
