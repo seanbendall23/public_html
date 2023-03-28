@@ -27,12 +27,12 @@ if ($conn->connect_error)
 {
 	die("Connection failed: " . $conn->connect_error);
 }
-echo "Connection made successfully";
+echo "Connection made successfully <br>";
 
 //start by trying to retrieve the actor ID from the database.
 function getActorID($actName)
 {
-	echo $actName;
+	//echo $actName;
 	$actIDQuery = "SELECT actID FROM Actor WHERE actName = '$actName'";
 	$result = $conn->query($actIDQuery);
 
