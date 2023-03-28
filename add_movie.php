@@ -42,16 +42,17 @@ while ($stmt->fetch())
 	$actorID =  htmlentities($actorID);
 }
 echo "$actorID";
-/*
-$query = "INSERT INTO Movie (mvGenre, mvPrice, mvName, actID) VALUES ('$movieGenre', '$moviePrice', '$movieName', $actorID)";
-if ($conn->query($query) === TRUE) 
+
+if ($actorID != 0)
 {
-  echo "Success - new actor added.";
-} 
-else 
-{
-  echo "Error: ". $conn->error;
+	$query = "INSERT INTO Movie (mvGenre, mvPrice, mvName, actID) VALUES ('$movieGenre', '$moviePrice', '$movieName', $actorID)";
+	$stmt = $conn->prepare($query);
+	$stmt->execute();
+	echo "Success";
 }
-*/
+
+
+
+
 $conn->close();
 ?>
