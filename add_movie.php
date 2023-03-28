@@ -33,51 +33,13 @@ echo "Connection made successfully <br>";
 
 
 $actIDQuery = "SELECT actID FROM Actor WHERE actName = '$actorName'";
-if ($result = $conn->query($actIDQuery))
-{
-	if (empty($result))
-	{
-		echo "Empty result found";
-	}
-	while ($row = mysqli_fetch_array($result))
-	{
-		echo $row['actID'];
-	}
-}
-else 
-{
-	echo "Error cannot execute $actIDQuery" . mysqli_error($conn);
-}
+$stmt = $conn->prepare($actIDQuery);
+$stmt->execute();
+$stmt->bind_result($actorID);
 
+echo $actorID
 /*
-while ($row = $result->fetch_array(MYSQLI_ASSOC))
-{
-	echo ${row['actID']};
-}
-*/
-/*
-if ($result === TRUE)
-{
-	if (empty($result)) 
-	{
-		return "Actor does not exist in database, adding them now.";
-	}
-		
-	else 
-	{
-
-		return $result;	
-	}
-}
-else 
-{
-	echo "Error: " . $conn->error;
-}
-*/
-	
-	
-/*
-$query = "INSERT INTO Movie (mvGenre, mvPrice, mvName, actID) VALUES ('$movieGenre', '$moviePrice', '$movieName', 1)";
+$query = "INSERT INTO Movie (mvGenre, mvPrice, mvName, actID) VALUES ('$movieGenre', '$moviePrice', '$movieName', $actorID)";
 if ($conn->query($query) === TRUE) 
 {
   echo "Success - new actor added.";
