@@ -34,15 +34,23 @@ function getActorID($actName)
 {
 	$actIDQuery = "SELECT actID FROM Actor WHERE actName = '$actName'";
 	$result = $conn->query($actIDQuery);
-	if (empty($result)) 
+	if ($result === TRUE)
 	{
-		return "Actor does not exist in database, adding them now.";
-
+		if (empty($result)) 
+		{
+			return "Actor does not exist in database, adding them now.";
+		}
+			
+		else 
+		{
+			return $result;	
+		}
 	}
 	else 
 	{
-		return $result;
+		echo "Error: " . $conn->error;
 	}
+	
 }
 
 //then, once you have the actors ID, you can add to the database.
