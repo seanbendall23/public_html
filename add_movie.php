@@ -65,7 +65,7 @@ function getActorID($actName)
 }
 
 //then, once you have the actors ID, you can add to the database.
-echo "getActorID($actName)";
+echo getActorID($actorName);
 /*
 $query = "INSERT INTO Movie (mvGenre, mvPrice, mvName, actID) VALUES ('$movieGenre', '$moviePrice', '$movieName', 1)";
 if ($conn->query($query) === TRUE) 
