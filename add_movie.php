@@ -5,7 +5,7 @@
 	</head>
 	<body>
 		<h1>ADM - Actor Database Manager</h1>
-		<button type="button" onclick="window.location.href='http://avon.cs.nott.ac.uk/~psysb16/application.html';">Return to menu.</button><br>
+		<br><br>
 		<?php
 		if (isset($_POST['MovieName']))
 		{
@@ -53,7 +53,7 @@
 		$stmt->execute();
 		$stmt->bind_result($movieID);
 		echo "$movieID <br>";
-		if ($movieID != 0)
+		if ($movieID == 0)
 		{
 			if ($actorName == "Unknown")
 			{
@@ -96,8 +96,10 @@
 		}
 		$conn->close();
 		?>
+		<br><br>
+		<button type="button" onclick="window.location.href='http://avon.cs.nott.ac.uk/~psysb16/application.html';">Return to menu.</button><br>
 
 
-		
+
 	</body>
 </html>
