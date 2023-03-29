@@ -55,6 +55,7 @@
 		echo "$movieID <br>";
 		if ($movieID == 0)
 		{
+			echo "Actor Name = $actorName<br>Actor ID = $actorID";
 			if ($actorName == "Unknown")
 			{
 				$query = "INSERT INTO Movie (mvGenre, mvPrice, mvName, actID) VALUES ('$movieGenre', '$moviePrice', '$movieName', 0)";
