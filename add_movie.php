@@ -47,7 +47,7 @@ $movieID = 0;
 $ifExistsQuery = "SELECT mvID FROM Movie WHERE mvName = '$movieName' AND mvGenre = '$movieGenre'";
 $stmt = $conn->prepare($ifExistsQuery);
 $stmt->execute();
-$stmt->bind_result($movieID)
+$stmt->bind_result($movieID);
 echo "$movieID <br>";
 if ($movieID != 0)
 {
