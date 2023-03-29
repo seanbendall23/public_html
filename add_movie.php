@@ -43,12 +43,26 @@ while ($stmt->fetch())
 }
 echo "$actorID";
 
-if ($actorID != 0)
+if ($actorName == "Unknown")
 {
 	$query = "INSERT INTO Movie (mvGenre, mvPrice, mvName, actID) VALUES ('$movieGenre', '$moviePrice', '$movieName', $actorID)";
 	$stmt = $conn->prepare($query);
 	$stmt->execute();
-	echo "Success";
+	echo "Added a movie with unknown actor successfully.";
+}
+else if ($actorID != 0)
+{
+	$query = "INSERT INTO Movie (mvGenre, mvPrice, mvName, actID) VALUES ('$movieGenre', '$moviePrice', '$movieName', $actorID)";
+	$stmt = $conn->prepare($query);
+	$stmt->execute();
+	echo "Added a movie successfully.";
+}
+else //add actor to database and add movie.
+{
+	$query = "INSERT INTO Actor (actName) VALUES ('$actorName')";
+	$stmt = $conn->prepare($query);
+	$stmt->execute();
+	echo "Added a new lead actor and their respective movie successfully.";
 }
 
 
