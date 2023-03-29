@@ -41,42 +41,58 @@ while ($stmt->fetch())
 {
 	$actorID =  htmlentities($actorID);
 }
-echo "$actorID";
 
-if ($actorName == "Unknown")
-{
-	$query = "INSERT INTO Movie (mvGenre, mvPrice, mvName, actID) VALUES ('$movieGenre', '$moviePrice', '$movieName', 0)";
-	$stmt = $conn->prepare($query);
-	$stmt->execute();
-	echo "Added a movie with unknown actor successfully.";
-}
-else if ($actorID != 0)
-{
-	$query = "INSERT INTO Movie (mvGenre, mvPrice, mvName, actID) VALUES ('$movieGenre', '$moviePrice', '$movieName', $actorID)";
-	$stmt = $conn->prepare($query);
-	$stmt->execute();
-	echo "Added a movie successfully.";
-}
-else //add actor to database and add movie.
-{
-	$query = "INSERT INTO Actor (actName) VALUES ('$actorName')";
-	$stmt = $conn->prepare($query);
-	$stmt->execute();
 
-	$actIDQuery = "SELECT actID FROM Actor WHERE actName = '$actorName'";
-	$stmt = $conn->prepare($actIDQuery);
-	$stmt->execute();
-	$stmt->bind_result($actorID);
-	while ($stmt->fetch())
+$movieID = 0;
+$ifExistsQuery = "SELECT mvID FROM Movie WHERE mvName = '$movieName' AND mvGenre = '$movieGenre'";
+$stmt = $conn->prepare($ifExistsQuery);
+$stmt->execute();
+$stmt->bind_result($movieID)
+echo "$movieID <br>";
+if ($movieID != 0)
+{
+	if ($actorName == "Unknown")
 	{
-		$actorID =  htmlentities($actorID);
+		$query = "INSERT INTO Movie (mvGenre, mvPrice, mvName, actID) VALUES ('$movieGenre', '$moviePrice', '$movieName', 0)";
+		$stmt = $conn->prepare($query);
+		$stmt->execute();
+		echo "Added a movie with unknown actor successfully.";
 	}
+	else if ($actorID != 0)
+	{
+		$query = "INSERT INTO Movie (mvGenre, mvPrice, mvName, actID) VALUES ('$movieGenre', '$moviePrice', '$movieName', $actorID)";
+		$stmt = $conn->prepare($query);
+		$stmt->execute();
+		echo "Added a movie successfully.";
+	}
+	else //add actor to database and add movie.
+	{
+		$query = "INSERT INTO Actor (actName) VALUES ('$actorName')";
+		$stmt = $conn->prepare($query);
+		$stmt->execute();
 
-	$query = "INSERT INTO Movie (mvGenre, mvPrice, mvName, actID) VALUES ('$movieGenre', '$moviePrice', '$movieName', $actorID)";
-	$stmt = $conn->prepare($query);
-	$stmt->execute();
-	echo "Added a new lead actor and their respective movie successfully.";
+		$actIDQuery = "SELECT actID FROM Actor WHERE actName = '$actorName'";
+		$stmt = $conn->prepare($actIDQuery);
+		$stmt->execute();
+		$stmt->bind_result($actorID);
+		while ($stmt->fetch())
+		{
+			$actorID =  htmlentities($actorID);
+		}
+
+		$query = "INSERT INTO Movie (mvGenre, mvPrice, mvName, actID) VALUES ('$movieGenre', '$moviePrice', '$movieName', $actorID)";
+		$stmt = $conn->prepare($query);
+		$stmt->execute();
+		echo "Added a new lead actor and their respective movie successfully.";
+	}
 }
+else 
+{
+	echo "That movie already exists";
+}
+
+
+
 
 
 
