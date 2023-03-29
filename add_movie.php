@@ -96,6 +96,15 @@ else
 
 
 
-
 $conn->close();
 ?>
+
+<html>
+	<head>
+		<title>Database Querying</title>
+	</head>
+	<body>
+		<h1>ADM - Actor Database Manager</h1>
+		<button type="button" onclick="window.location.href='http://avon.cs.nott.ac.uk/~psysb16/application.html';">Return to menu.</button><br>
+	</body>
+</html>
