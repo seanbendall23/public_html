@@ -25,7 +25,7 @@ $stmt->bind_result($ID, $ActorID, $Genre, $Price);
 $count = 1;
 
 echo "Results: ";
-/*
+
 while ($stmt->fetch())
 {
 	echo "<br>";
@@ -34,5 +34,5 @@ while ($stmt->fetch())
 	echo "Genre: " . htmlentities($Genre) . "<br>";
 	echo "Price: " . htmlentities($Price) . "<br>";
 }
-*/
+
 ?>
