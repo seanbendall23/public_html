@@ -52,6 +52,10 @@
 		$stmt = $conn->prepare($ifExistsQuery);
 		$stmt->execute();
 		$stmt->bind_result($movieID);
+		while ($stmt->fetch())
+		{
+			$movieID = htmlentities($movieID);
+		}
 		echo "Movie ID is $movieID <br>";
 		if ($movieID == 0)
 		{
