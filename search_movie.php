@@ -33,6 +33,10 @@ while ($stmt->fetch())
 	echo "ID: " . htmlentities($ID) . "<br>";
 	echo "Genre: " . htmlentities($Genre) . "<br>";
 	echo "Price: " . htmlentities($Price) . "<br>";
+	$count = $count + 1;
 }
-
+if ($count == 1)
+{
+	echo "<script> alert('This movie does not exist.');</script>";
+}
 ?>
