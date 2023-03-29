@@ -47,13 +47,13 @@
 			$actorID =  htmlentities($actorID);
 		}
 
-		$movieID = 0;
+		$movieID = '0';
 		$ifExistsQuery = "SELECT mvID FROM Movie WHERE mvName = '$movieName' AND mvGenre = '$movieGenre'";
 		$stmt = $conn->prepare($ifExistsQuery);
 		$stmt->execute();
 		$stmt->bind_result($movieID);
 		echo "$movieID <br>";
-		if ($movieID == 0)
+		if ($movieID == '0')
 		{
 			echo "Actor Name = $actorName<br>Actor ID = $actorID";
 			if ($actorName == "Unknown")
