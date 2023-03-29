@@ -17,7 +17,7 @@ if ($conn->connect_error)
 echo "Connection made successfully <br>";
 
 $ID = 0;
-$query = "SELECT (mvID, actID, mvGenre, mvPrice) FROM Movie WHERE mvName = '$movieName'";
+$query = "SELECT mvID, actID, mvGenre, mvPrice FROM Movie WHERE mvName = '$movieName'";
 $stmt = $conn->prepare($query);
 $stmt->execute();
 $stmt->bind_result($ID, $ActorID, $Genre, $Price);
