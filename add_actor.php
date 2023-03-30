@@ -20,7 +20,6 @@
 		{
 			die("Connection failed: " . $conn->connect_error);
 		}
-		echo "Connection made successfully <br>";
 
 		$actIDQuery = "SELECT actID FROM Actor WHERE actName = '$actorName'";
 		$stmt = $conn->prepare($actIDQuery);
