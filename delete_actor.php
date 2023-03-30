@@ -44,7 +44,7 @@
 			$conn->query($foreign);
 
 			$updateQuery = "UPDATE Movie SET actID=0 WHERE actID=$actID";
-			if ($conn->query($removeQuery) === TRUE)
+			if ($conn->query($updateQuery) === TRUE)
 			{
 				echo "movies with actor successfully changed";
 			}
