@@ -33,14 +33,14 @@
 		{
 			$actID = htmlentities($actID);
 		}
-		echo "Movie ID is $actID <br>";
+		echo "Actor ID is $actID <br>";
 		if ($actID == 0)
 		{
 			echo "That actor does not exist";
 		}
 		else 
 		{
-			$removeQuery = "DELETE FROM Actor WHERE actID=$actID";
+			$removeQuery = "DELETE FROM Actor WHERE actID='$actID';";
 			$stmt = $conn->prepare($removeQuery);
 			$stmt->execute();
 			echo "removed successfully";
