@@ -35,14 +35,14 @@
 			while ($stmt->fetch())
 			{
 				echo "<br>";
-				echo "Movie #" . htmlentities($count) . " :<br>";
+				echo "Actor #" . htmlentities($count) . " :<br>";
 				echo "ID: " . htmlentities($actorID) . "<br>";
 				echo "Name: " . htmlentities($actorName) . "<br>";
 				$count = $count + 1;
 			}
 			if ($count == 1)
 			{
-				echo "<script> alert('This movie does not exist.');</script>";
+				echo "<script> alert('This actor does not yet exist.');</script>";
 			}
 		?>
 		<br><br>

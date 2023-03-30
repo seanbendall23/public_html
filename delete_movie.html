@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Delete a Movie</title>
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<h1>ADM - Actor Database Manager</h1>
+		<h2>Movie to Delete:</h2>
+		<form method="post" action="delete_movie.php" onsubmit="return validateSubmission(this)">
+
+			<label for="MovieName"> Movie Name: </label><br>
+			<input type="text" id="MovieName" name="MovieName" maxlength="255"><br>
+
+			<label for="MovieGenre"> Movie Genre: </label><br>
+			<input type="text" id="MovieGenre" name="MovieGenre" maxlength="255"><br>
+
+			<input type="submit" value="Add Movie">
+		</form>
+
+		<button class="button button2" type="button" onclick="window.location.href='http://avon.cs.nott.ac.uk/~psysb16/application.html';">Back to main menu.</button>
+
+
+		
+		<script>
+			
+			function validateSubmission(form)
+			{
+				var checkValue = "";
+				checkValue += validateString(form.MovieName.value);
+				checkValue += validateString(form.MovieGenre.value);
+
+				if (checkValue == "") return true;
+				else {alert(checkValue); return false;}
+			}
+
+			function validateString(str)
+			{
+				return (str == "") ? "Fields are missing on form.\n" : "";
+			}
+
+			function validatePrice(price)
+			{
+				if (price == "") { return "You have not entered a price.";}
+				if (isNaN(price)) { return "You have entered an invalid number into price.";}
+				else { return "";}
+			}
+
+
+		</script>
+
+	</body>
+</html>
