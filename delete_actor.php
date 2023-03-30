@@ -40,10 +40,15 @@
 		}
 		else 
 		{
-			$removeQuery = "DELETE FROM Actor WHERE actID='$actID';";
-			$stmt = $conn->prepare($removeQuery);
-			$stmt->execute();
-			echo "removed successfully";
+			$removeQuery = "DELETE FROM Actor WHERE actID=$actID";
+			if ($conn->query($removeQuery) === TRUE)
+			{
+				echo "record deleted successfully";
+			}
+			else 
+			{
+				echo "error has occurred" . $conn->error;
+			}
 		}
 		$conn->close();
 		?>
