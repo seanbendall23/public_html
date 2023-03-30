@@ -40,6 +40,9 @@
 		}
 		else 
 		{
+			$foreign = "SET FOREIGN_KEY_CHECKS=0";
+			$conn->query($foreign);
+
 			$updateQuery = "UPDATE Movie SET actID=0 WHERE actID=$actID";
 			if ($conn->query($removeQuery) === TRUE)
 			{
@@ -59,6 +62,9 @@
 			{
 				echo "error has occurred" . $conn->error;
 			}
+
+			$foreign = "SET FOREIGN_KEY_CHECKS=1";
+			$conn->query($foreign);
 		}
 		$conn->close();
 		?>
