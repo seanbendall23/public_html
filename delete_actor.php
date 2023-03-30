@@ -22,7 +22,6 @@
 		{
 			die("Connection failed: " . $conn->connect_error);
 		}
-		echo "Connection made successfully <br>";
 
 		$actID = 0;
 		$ifExistsQuery = "SELECT actID FROM Actor WHERE actName = '$actorName'";
@@ -33,7 +32,6 @@
 		{
 			$actID = htmlentities($actID);
 		}
-		echo "Actor ID is $actID <br>";
 		if ($actID == 0)
 		{
 			echo "That actor does not exist";
@@ -46,21 +44,21 @@
 			$updateQuery = "UPDATE Movie SET actID=0 WHERE actID=$actID";
 			if ($conn->query($updateQuery) === TRUE)
 			{
-				echo "movies with actor successfully changed";
+				echo "Movies with actor successfully changed<br>";
 			}
 			else 
 			{
-				echo "error has occurred" . $conn->error;
+				echo "Error has occurred in updating the movies with that actor in: " . $conn->error . "<br>";
 			}
 
 			$removeQuery = "DELETE FROM Actor WHERE actID=$actID";
 			if ($conn->query($removeQuery) === TRUE)
 			{
-				echo "record deleted successfully";
+				echo "record deleted successfully<br>";
 			}
 			else 
 			{
-				echo "error has occurred" . $conn->error;
+				echo "error has occurred" . $conn->error . "<br>";
 			}
 
 			$foreign = "SET FOREIGN_KEY_CHECKS=1";
