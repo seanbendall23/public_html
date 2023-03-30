@@ -40,6 +40,16 @@
 		}
 		else 
 		{
+			$updateQuery = "UPDATE Movie SET actID=0 WHERE actID=$actID";
+			if ($conn->query($removeQuery) === TRUE)
+			{
+				echo "movies with actor successfully changed";
+			}
+			else 
+			{
+				echo "error has occurred" . $conn->error;
+			}
+
 			$removeQuery = "DELETE FROM Actor WHERE actID=$actID";
 			if ($conn->query($removeQuery) === TRUE)
 			{
@@ -54,8 +64,6 @@
 		?>
 		<br><br>
 		<button type="button" onclick="window.location.href='http://avon.cs.nott.ac.uk/~psysb16/application.html';">Return to menu.</button><br>
-
-
 
 	</body>
 </html>
