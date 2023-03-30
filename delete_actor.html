@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Delete an Actor</title>
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<h1>ADM - Actor Database Manager</h1>
+		<h2>Actor to Delete:</h2>
+		<form method="post" action="delete_actor.php" onsubmit="return validateSubmission(this)">
+
+			<label for="ActorName"> Actor Name: </label><br>
+			<input type="text" id="ActorName" name="ActorName" maxlength="255"><br>
+
+			<input type="submit" value="Add Actor">
+		</form>
+
+		<button class="button button2" type="button" onclick="window.location.href='http://avon.cs.nott.ac.uk/~psysb16/application.html';">Back to main menu.</button>
+		
+		<script>
+			
+			function validateSubmission(form)
+			{
+				var checkValue = "";
+				checkValue += validateString(form.ActorName.value);
+
+				if (checkValue == "") return true;
+				else {alert(checkValue); return false;}
+			}
+
+			function validateString(str)
+			{
+				return (str == "") ? "Fields are missing on form.\n" : "";
+			}
+
+
+		</script>
+
+	</body>
+</html>
