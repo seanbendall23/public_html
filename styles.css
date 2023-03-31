@@ -19,9 +19,9 @@
 	text-align: center;
 }
 
-.text-input {
+input[type=text] {
 	padding: 20px;
 	margin:10px 0;
 	box-shadow: 0 0 20px 5px rgba(0,0,0,0.05);
-	width:20px;
+	width:100%;
 }
