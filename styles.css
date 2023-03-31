@@ -19,6 +19,7 @@
 	text-align: center;
 }
 
+
 /*
 .submit-text {
 	padding: 20px;
@@ -27,8 +28,7 @@
 	width:100%;
 }
 */
-
 input[type=submit] {
-	background-color: #E88940;
+    background-color: #E88940;
     color: #FFEBCD;
-}
+}   
