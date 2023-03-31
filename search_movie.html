@@ -6,13 +6,14 @@
 		<link rel="stylesheet" href="styles.css">
 	</head>
 	<body>
-		<h1>Search for a Movie</h1>
+		<br>
+		<h1 class = "h1 h1a">Search for a Movie</h1>
 
 		<form method="post" action="search_movie.php" onsubmit="return validateSubmission(this)">
 
 			<label for="MovieName"> Movie Name: </label><br>
-			<input type="text" id="MovieName" name="MovieName" maxlength="255"><br>
-			<input type="submit" value="Search for movie">
+			<input placeholder="Movie Name:" class = "input submit-text" type="text" id="MovieName" name="MovieName" maxlength="255"><br>
+			<input type="submit" class="input submit-button" value="Search for movie">
 		</form>
 
 		<button type="button" onclick="window.location.href='http://avon.cs.nott.ac.uk/~psysb16/application.html';">Back to main menu.</button>

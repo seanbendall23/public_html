@@ -4,6 +4,7 @@
 		<link rel="stylesheet" href="styles.css">
 	</head>
 	<body>
+		<br>
 		<h1 class = "h1 h1a">ADM - Actor Database Manager</h1>
 		<?php
 		if (isset($_POST['ActorName']))
