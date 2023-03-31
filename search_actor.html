@@ -6,17 +6,19 @@
 		<link rel="stylesheet" href="styles.css">
 	</head>
 	<body>
-		<h1>Search for an actor</h1>
+		<h1 class="h1 h1a">Search for an actor</h1>
 
-		<form method="post" action="search_actor.php" onsubmit="return validateSubmission(this)">
+		<form method="post" align='center' action="search_actor.php" onsubmit="return validateSubmission(this)">
 
 			<label for="ActorName"> Actor Name: </label><br>
-			<input type="text" id="ActorName" name="ActorName" maxlength="255"><br>
-			<input type="submit" value="Search for actor">
+			<input type="text" class="input submit-text" id="ActorName" name="ActorName" maxlength="255"><br>
+			<input type="submit" class="input submit-button" value="Search for actor">
 		</form>
 
-		<button type="button" onclick="window.location.href='http://avon.cs.nott.ac.uk/~psysb16/application.html';">Back to main menu.</button>
-		
+		<div align='center'>
+			<button type="button" onclick="window.location.href='http://avon.cs.nott.ac.uk/~psysb16/application.html';">Back to main menu.</button>
+		</div>
+
 		<script>
 			
 			function validateSubmission(form)
