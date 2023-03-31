@@ -6,12 +6,12 @@
 		<link rel="stylesheet" href="styles.css">
 	</head>
 	<body>
+		<br>
 		<h1 class="h1 h1a">ADM - Actor Database Manager</h1>
 		<h2 class="h2 h1a">Actor to Delete:</h2>
 		<form method="post" action="delete_actor.php" align='center' onsubmit="return validateSubmission(this)">
 
-			<label for="ActorName"> Actor Name: </label><br>
-			<input class="input submit-text" type="text" id="ActorName" name="ActorName" maxlength="255"><br>
+			<input class="input submit-text" placeholder="Name" type="text" id="ActorName" name="ActorName" maxlength="255"><br>
 
 			<input type="submit" class="input submit-button" value="Delete Actor">
 		</form>
