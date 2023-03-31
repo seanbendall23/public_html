@@ -5,6 +5,7 @@
 		<link rel="stylesheet" href="styles.css">
 	</head>
 	<body>
+		<br>
 		<h1 class="h1 h1a">ADM - Actor Database Manager</h1>
 		<?php
 			if (isset($_POST['ActorName']))
@@ -44,13 +45,13 @@
 			if ($count == 1)
 			{
 				echo "<script> alert('This actor does not yet exist.');</script>";
-				echo "<p class='p p1'>This actor does not yet exist.</p>"
+				echo "<p class='p p1'>This actor does not yet exist.</p>";
 			}
 		?>
 		<br><br>
 		<div align='center'>
 
-			<button type="button" onclick="window.location.href='http://avon.cs.nott.ac.uk/~psysb16/application.html';">Return to menu.</button><br>
+			<button type="button" class="button button1" onclick="window.location.href='http://avon.cs.nott.ac.uk/~psysb16/application.html';">Return to menu.</button><br>
 		</div>
 	</body>
 </html>
