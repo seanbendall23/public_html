@@ -3,7 +3,7 @@
 		<title>Database Querying</title>
 	</head>
 	<body>
-		<h1>ADM - Actor Database Manager</h1>
+		<h1 class = "h1 h1a">ADM - Actor Database Manager</h1>
 		<?php
 		if (isset($_POST['ActorName']))
 		{
@@ -35,6 +35,7 @@
 			$query = "INSERT INTO Actor (actName) VALUES ('$actorName')";
 			$stmt = $conn->prepare($query);
 			$stmt->execute();
+			echo "<p class='p p1'> Actor Added Successfully.";
 		}
 		else 
 		{
@@ -42,6 +43,6 @@
 		}
 		?>
 		<br><br>
-		<button type="button" onclick="window.location.href='http://avon.cs.nott.ac.uk/~psysb16/application.html';">Return to menu.</button><br>
+		<button class = "button button1" type="button" onclick="window.location.href='http://avon.cs.nott.ac.uk/~psysb16/application.html';">Return to menu.</button><br>
 	</body>
 </html>
