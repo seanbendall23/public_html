@@ -1,9 +1,11 @@
 <html>
 	<head>
 		<title>Database Querying</title>
+		<link rel="stylesheet" href="styles.css">
 	</head>
 	<body>
-		<h1>ADM - Actor Database Manager</h1>
+		<br>
+		<h1 class="h1 h1a">ADM - Actor Database Manager</h1>
 		<br><br>
 		<?php
 		if (isset($_POST['MovieName']))
@@ -26,7 +28,6 @@
 		{
 			die("Connection failed: " . $conn->connect_error);
 		}
-		echo "Connection made successfully <br>";
 
 		$movieID = 0;
 		$ifExistsQuery = "SELECT mvID FROM Movie WHERE mvName = '$movieName' AND mvGenre = '$movieGenre'";
@@ -37,23 +38,23 @@
 		{
 			$movieID = htmlentities($movieID);
 		}
-		echo "Movie ID is $movieID <br>";
 		if ($movieID == 0)
 		{
-			echo "That movie does not exist";
+			echo "<p class='p p1'> That movie does not exist</p>";
 		}
 		else 
 		{
 			$removeQuery = "DELETE FROM Movie WHERE mvID=$movieID";
 			$stmt = $conn->prepare($removeQuery);
 			$stmt->execute();
-			echo "removed successfully";
+			echo "<p class='p p1'>removed successfully</p>";
 		}
 		$conn->close();
 		?>
 		<br><br>
-		<button type="button" onclick="window.location.href='http://avon.cs.nott.ac.uk/~psysb16/application.html';">Return to menu.</button><br>
-
+		<div align='center'>
+			<button type="button" class="button button1" onclick="window.location.href='http://avon.cs.nott.ac.uk/~psysb16/application.html';">Return to menu.</button><br>
+		</div>
 
 
 	</body>
