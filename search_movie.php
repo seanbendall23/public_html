@@ -36,10 +36,10 @@
 			while ($stmt->fetch())
 			{
 				echo "<br>";
-				echo "<p class="p p1"> Movie #" . htmlentities($count) . " :<br>";
-				echo "ID: " . htmlentities($ID) . "<br>";
-				echo "Genre: " . htmlentities($Genre) . "<br>";
-				echo "Price: " . htmlentities($Price) . "<br></p>";
+				echo "<p class="p p1"> Movie #" . htmlentities($count) . " :<br></p>";
+				echo "<p class="p p1">ID: " . htmlentities($ID) . "<br></p>";
+				echo "<p class="p p1">Genre: " . htmlentities($Genre) . "<br></p></p>";
+				echo "<p class="p p1">Price: " . htmlentities($Price) . "<br></p>";
 				$count = $count + 1;
 			}
 			if ($count == 1)
@@ -48,6 +48,8 @@
 			}
 		?>
 		<br><br>
-		<button type="button" onclick="window.location.href='http://avon.cs.nott.ac.uk/~psysb16/application.html';">Return to menu.</button><br>
+		<div align="center">
+			<button type="button" class="button button1"onclick="window.location.href='http://avon.cs.nott.ac.uk/~psysb16/application.html';">Return to menu.</button><br>
+		</div>
 	</body>
 </html>
