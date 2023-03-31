@@ -32,7 +32,7 @@
 
 			$count = 1;
 
-			echo "<p class='p p1'> Results: </p>";
+			echo "<p class='p p1'> Results for search $movieName: </p>";
 
 			while ($stmt->fetch())
 			{
@@ -40,7 +40,7 @@
 				echo "<p class='p p1'> Movie #" . htmlentities($count) . " :<br></p>";
 				echo "<p class='p p1'>ID: " . htmlentities($ID) . "<br></p>";
 				echo "<p class='p p1'>Genre: " . htmlentities($Genre) . "<br></p></p>";
-				echo "<p class='p p1'>Price: " . htmlentities($Price) . "<br></p>";
+				echo "<p class='p p1'>Price: " . htmlentities($Price) . "<br><br></p>";
 				$count = $count + 1;
 			}
 			if ($count == 1)
