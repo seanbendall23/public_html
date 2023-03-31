@@ -4,7 +4,8 @@
 		<title>Database Querying</title>
 	</head>
 	<body>
-		<h1>ADM - Actor Database Manager</h1>
+		<br>
+		<h1 class="h1 h1a">ADM - Actor Database Manager</h1>
 		<?php
 			if (isset($_POST['MovieName']))
 			{
@@ -30,15 +31,15 @@
 
 			$count = 1;
 
-			echo "Results: ";
+			echo "<p class="p p1"> Results: </p>";
 
 			while ($stmt->fetch())
 			{
 				echo "<br>";
-				echo "Movie #" . htmlentities($count) . " :<br>";
+				echo "<p class="p p1"> Movie #" . htmlentities($count) . " :<br>";
 				echo "ID: " . htmlentities($ID) . "<br>";
 				echo "Genre: " . htmlentities($Genre) . "<br>";
-				echo "Price: " . htmlentities($Price) . "<br>";
+				echo "Price: " . htmlentities($Price) . "<br></p>";
 				$count = $count + 1;
 			}
 			if ($count == 1)
