@@ -36,4 +36,7 @@
 .submit-button {
     background-color: #D3D3D3;
     color: #000000;
+    padding:8px 16px;
+    margin:4px 2px;
+    cursor:pointer;
 } 
