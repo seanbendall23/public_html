@@ -40,10 +40,13 @@
 		}
 		else 
 		{
-			echo "<script> alert('This actor already exists.');</script>";
+			echo "<script> alert('Error : This actor already exists.');</script>";
+			echo "<p class='p p1'> Actor Already Exists.</p>";
 		}
 		?>
 		<br><br>
-		<button class = "button button1" type="button" onclick="window.location.href='http://avon.cs.nott.ac.uk/~psysb16/application.html';">Return to menu.</button><br>
+		<div style="text-align:center">
+			<button class = "button button1" type="button" onclick="window.location.href='http://avon.cs.nott.ac.uk/~psysb16/application.html';">Return to menu.</button><br>
+		</div>
 	</body>
 </html>
