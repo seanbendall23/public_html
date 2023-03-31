@@ -11,15 +11,17 @@
 			Adding Actor
 		</p>
 
-		<form method="post" action="add_actor.php" onsubmit="return validateSubmission(this)">
+		<form method="post" action="add_actor.php" align="center" onsubmit="return validateSubmission(this)">
 
 			<label for="ActorName"> Actor Name: </label><br>
 			<input type="text" id="ActorName" name="ActorName" maxlength="255"><br>
 			<input type="submit" value="Add Actor">
 		</form>
 
-		<button class="button button1" type="button" onclick="window.location.href='http://avon.cs.nott.ac.uk/~psysb16/application.html';">Back to main menu.</button>
-		
+		<div style="text-align:center">
+			<button class="button button1" type="button" onclick="window.location.href='http://avon.cs.nott.ac.uk/~psysb16/application.html';">Back to main menu.</button>
+		</div>
+
 		<script>
 			
 			function validateSubmission(form)
