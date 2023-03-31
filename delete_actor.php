@@ -71,7 +71,7 @@
 		?>
 		<br><br>
 		<div align='center'>
-			<button type="button" onclick="window.location.href='http://avon.cs.nott.ac.uk/~psysb16/application.html';">Return to menu.</button><br>
+			<button type="button" class="button button1" onclick="window.location.href='http://avon.cs.nott.ac.uk/~psysb16/application.html';">Return to menu.</button><br>
 		</div>
 		
 
