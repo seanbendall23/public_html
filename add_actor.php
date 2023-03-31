@@ -35,7 +35,7 @@
 			$query = "INSERT INTO Actor (actName) VALUES ('$actorName')";
 			$stmt = $conn->prepare($query);
 			$stmt->execute();
-			echo "<p class='p p1'> Actor Added Successfully.";
+			echo "<p class='p p1'> Actor Added Successfully.</p>";
 		}
 		else 
 		{
