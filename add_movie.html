@@ -6,26 +6,23 @@
 		<link rel="stylesheet" href="styles.css">
 	</head>
 	<body>
-		<h1>ADM - Actor Database Manager</h1>
-		<p>
-			Adding movie
-		</p>
+		<h1 class="h1 h1a">ADM - Actor Database Manager</h1>
 
-		<form method="post" action="add_movie.php" onsubmit="return validateSubmission(this)">
+		<form method="post" align="center" action="add_movie.php" onsubmit="return validateSubmission(this)">
 
 			<label for="MovieName"> Movie Name: </label><br>
-			<input type="text" id="MovieName" name="MovieName" maxlength="255"><br>
+			<input type="text" class="input submit-text" id="MovieName" name="MovieName" maxlength="255"><br>
 
 			<label for="MovieGenre"> Movie Genre: </label><br>
-			<input type="text" id="MovieGenre" name="MovieGenre" maxlength="255"><br>
+			<input type="text" class="input submit-text"id="MovieGenre" name="MovieGenre" maxlength="255"><br>
 
 			<label for="MoviePrice"> Movie Price: </label><br>
-			<input type="text" id="MoviePrice" name="MoviePrice"><br>
+			<input type="text" class="input submit-text"id="MoviePrice" name="MoviePrice"><br>
 
 			<label for="ActorName"> Main Actor Name: (Enter "Unknown" if unknown.) </label><br>
-			<input type="text" id="ActorName" name="ActorName" maxlength="255"><br><br>
+			<input type="text" class="input submit-text"id="ActorName" name="ActorName" maxlength="255"><br><br>
 
-			<input type="submit" value="Add Movie">
+			<input type="submit" class="input submit-button" value="Add Movie">
 		</form>
 
 		<button class="button button2" type="button" onclick="window.location.href='http://avon.cs.nott.ac.uk/~psysb16/application.html';">Back to main menu.</button>

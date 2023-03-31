@@ -2,9 +2,11 @@
 <html>
 	<head>
 		<title>Database Querying</title>
+		<link rel="stylesheet" href="styles.css">
 	</head>
 	<body>
-		<h1>ADM - Actor Database Manager</h1>
+		<br>
+		<h1 class="h1 h1a">ADM - Actor Database Manager</h1>
 		<br><br>
 		<?php
 		if (isset($_POST['MovieName']))
@@ -35,7 +37,6 @@
 		{
 			die("Connection failed: " . $conn->connect_error);
 		}
-		echo "Connection made successfully <br>";
 
 		$actIDQuery = "SELECT actID FROM Actor WHERE actName = '$actorName'";
 		$stmt = $conn->prepare($actIDQuery);
@@ -56,23 +57,21 @@
 		{
 			$movieID = htmlentities($movieID);
 		}
-		echo "Movie ID is $movieID <br>";
 		if ($movieID == 0)
 		{
-			echo "Actor Name = $actorName<br>Actor ID = $actorID";
 			if ($actorName == "Unknown")
 			{
 				$query = "INSERT INTO Movie (mvGenre, mvPrice, mvName, actID) VALUES ('$movieGenre', '$moviePrice', '$movieName', 0)";
 				$stmt = $conn->prepare($query);
 				$stmt->execute();
-				echo "Added a movie with unknown actor successfully.";
+				echo "<p class='p p1'> Added a movie with unknown actor successfully.</p>";
 			}
 			else if ($actorID != 0)
 			{
 				$query = "INSERT INTO Movie (mvGenre, mvPrice, mvName, actID) VALUES ('$movieGenre', '$moviePrice', '$movieName', $actorID)";
 				$stmt = $conn->prepare($query);
 				$stmt->execute();
-				echo "Added a movie successfully.";
+				echo "<p class='p p1'>Added a movie successfully.</p>";
 			}
 			else //add actor to database and add movie.
 			{
@@ -92,18 +91,19 @@
 				$query = "INSERT INTO Movie (mvGenre, mvPrice, mvName, actID) VALUES ('$movieGenre', '$moviePrice', '$movieName', $actorID)";
 				$stmt = $conn->prepare($query);
 				$stmt->execute();
-				echo "Added a new lead actor and their respective movie successfully.";
+				echo "<p class='p p1'>Added a new lead actor and their respective movie successfully.</p>";
 			}
 		}
 		else 
 		{
-			echo "That movie already exists";
+			echo "<p class='p p1'>That movie already exists</p>";
 		}
 		$conn->close();
 		?>
 		<br><br>
-		<button type="button" onclick="window.location.href='http://avon.cs.nott.ac.uk/~psysb16/application.html';">Return to menu.</button><br>
-
+		<div align="center">
+			<button type="button" onclick="window.location.href='http://avon.cs.nott.ac.uk/~psysb16/application.html';">Return to menu.</button><br>
+		</div>
 
 
 	</body>
