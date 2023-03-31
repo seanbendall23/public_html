@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>Database Querying</title>
+		<link rel="stylesheet" href="styles.css">
 	</head>
 	<body>
 		<br>
