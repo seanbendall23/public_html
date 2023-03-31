@@ -1,6 +1,7 @@
 <html>
 	<head>
 		<title>Database Querying</title>
+		<link rel="stylesheet" href="styles.css">
 	</head>
 	<body>
 		<h1 class = "h1 h1a">ADM - Actor Database Manager</h1>
